@@ -110,6 +110,22 @@ Run the script to split Excel sheets (if needed):
 
 python scripts/split_sheets.py
 
+""import pandas as pd
+
+# Replace with your Excel file name
+input_file = "/content/HR Attrition Dashboard.xlsx"
+
+# Load the Excel file
+xls = pd.ExcelFile(input_file)
+
+# Loop through each sheet and save as a new Excel file
+for sheet_name in xls.sheet_names:
+    df = pd.read_excel(input_file, sheet_name=sheet_name)
+    output_file = f"{sheet_name}.xlsx"
+    df.to_excel(output_file, index=False)
+    print(f"Saved: {output_file}")
+"" PLease copy paste this yourself this part
+
 
 Explore the dashboards and processed data in data/processed/.
 
